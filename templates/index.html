@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Home - BISOU{% endblock %}
+{% block content %}
+<section class="hero">
+<div class="hero-text">
+<h1>Welcome to BISOU KITCHEN</h1>
+<p>Delicious food, warm ambience &amp; joyful moments.</p>
+<a class="cta" href="{{ url_for('login') }}">Reserve a Table</a>
+</div>
+<div class="hero-image"></div>
+</section>
+
+
+<section class="menu">
+<h2>Our Menu</h2>
+<div class="dish-grid">
+{% for d in dishes %}
+<div class="dish-card">
+<div class="dish-img" style="background-image:url('{{ d.img }}')"></div>
+<div class="dish-info">
+<h3>{{ d.name }}</h3>
+<p>{{ d.desc }}</p>
+<button class="order">Order</button>
+</div>
+</div>
+{% endfor %}
+</div>
+</section>
+
+
+{% endblock %}

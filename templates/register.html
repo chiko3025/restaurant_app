@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Reservation - BISOU{% endblock %}
+{% block content %}
+<section class="form-wrap">
+<h2>Registration for {{ pending.username }}</h2>
+<form method="post" action="{{ url_for('register') }}" class="form">
+<label>Date<input type="date" name="date" required></label>
+<label>Time<input type="time" name="time" required></label>
+<label>Guests<input type="number" name="guests" min="1" max="20" value="2" required></label>
+<label>Special requests<textarea name="notes" rows="3" placeholder="Allergies, seating preference..."></textarea></label>
+<button class="btn-primary">Confirm Registration and reservation</button>
+</form>
+</section>
+{% endblock %}

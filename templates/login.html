@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Login - BISOU{% endblock %}
+{% block content %}
+<section class="form-wrap">
+<h2>Login / Enter your details</h2>
+<form method="post" action="{{ url_for('login') }}" class="form">
+<label>Username<input type="text" name="username" required></label>
+<label>Email<input type="email" name="email" required></label>
+<label>Password<input type="password" name="password" required></label>
+<button class="btn-primary">Continue to register and reserve a table</button>
+</form>
+<p class="muted">After you submit, you'll complete a registration and reserve a table on the next page.</p>
+</section>
+{% endblock %}

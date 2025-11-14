@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard - BISOU{% endblock %}
+{% block content %}
+<section class="dashboard">
+<h2>Hello, {{ user.username }} 👋</h2>
+<div class="card">
+<h3>Your Reservation</h3>
+{% if user.reservation %}
+<p><strong>Date:</strong> {{ user.reservation.date }}</p>
+<p><strong>Time:</strong> {{ user.reservation.time }}</p>
+<p><strong>Guests:</strong> {{ user.reservation.guests }}</p>
+<p><strong>Notes:</strong> {{ user.reservation.notes }}</p>
+{% else %}
+<p>No reservation found.</p>
+{% endif %}
+<a href="{{ url_for('logout') }}" class="btn-ghost">Logout</a>
+</div>
+</section>
+{% endblock %}
